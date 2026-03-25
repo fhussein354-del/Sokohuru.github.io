@@ -4,6 +4,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>SOKO HURU — Free Market | Serem, Vihiga (1000+ unique products)</title>
+<!-- PWA Meta Tags -->
+<meta name="theme-color" content="#1a6b3c"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+<meta name="apple-mobile-web-app-title" content="Soko Huru"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<link rel="manifest" id="pwa-manifest"/>
 <!-- Open Graph / WhatsApp link preview -->
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="SOKO HURU — Free Market, Serem Vihiga"/>
@@ -1338,6 +1345,69 @@ footer{background:var(--br);padding:52px 40px 28px;}
 /* Seller profile modal avatar */
 .smp-av-big.has-pic{background:transparent!important;overflow:hidden;padding:0;}
 .smp-av-big.has-pic img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+
+/* ══════════════════════════════════════════════════════════
+   PWA INSTALL BANNER
+══════════════════════════════════════════════════════════ */
+#pwa-banner{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(120px);
+  z-index:9999;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 8px 48px rgba(0,0,0,.22),0 2px 12px rgba(0,0,0,.1);
+  padding:18px 20px 18px 18px;
+  display:flex;align-items:center;gap:14px;
+  max-width:min(420px, calc(100vw - 32px));
+  width:100%;
+  border:1.5px solid rgba(26,107,60,.15);
+  transition:transform .5s cubic-bezier(.34,1.26,.64,1),opacity .4s ease;
+  opacity:0;
+  pointer-events:none;
+}
+#pwa-banner.visible{
+  transform:translateX(-50%) translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+.pwa-icon{
+  width:54px;height:54px;border-radius:14px;
+  background:linear-gradient(135deg,var(--g),var(--gl));
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;flex-shrink:0;
+  box-shadow:0 4px 14px rgba(26,107,60,.3);
+}
+.pwa-text{flex:1;min-width:0;}
+.pwa-title{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:14px;color:var(--tx);letter-spacing:.3px;margin-bottom:2px;}
+.pwa-sub{font-size:12px;color:var(--gr);line-height:1.4;}
+.pwa-chips{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;}
+.pwa-chip{font-family:'Josefin Sans',sans-serif;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 8px;border-radius:10px;background:rgba(26,107,60,.08);color:var(--g);border:1px solid rgba(26,107,60,.15);}
+.pwa-actions{display:flex;flex-direction:column;gap:7px;flex-shrink:0;}
+.pwa-install-btn{
+  background:var(--g);color:#fff;border:none;
+  border-radius:10px;padding:9px 16px;
+  font-family:'Josefin Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;white-space:nowrap;
+  transition:background .2s,transform .15s;
+  box-shadow:0 3px 10px rgba(26,107,60,.3);
+}
+.pwa-install-btn:hover{background:var(--gl);transform:translateY(-1px);}
+.pwa-dismiss-btn{
+  background:none;border:none;color:var(--gr);font-size:11px;
+  font-family:'Josefin Sans',sans-serif;cursor:pointer;
+  text-align:center;padding:2px;
+  transition:color .2s;
+}
+.pwa-dismiss-btn:hover{color:var(--tx);}
+
+/* Fast food menu card */
+.ff-menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:16px;}
+.ff-item-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07);border:1px solid #ede3d6;transition:transform .3s,box-shadow .3s;cursor:pointer;}
+.ff-item-card:hover{transform:translateY(-5px);box-shadow:0 10px 28px rgba(26,107,60,.14);}
+.ff-item-img{width:100%;height:140px;object-fit:cover;}
+.ff-item-body{padding:10px 12px 12px;}
+.ff-item-name{font-family:'Josefin Sans',sans-serif;font-weight:700;font-size:13px;color:var(--tx);margin-bottom:3px;}
+.ff-item-desc{font-size:11px;color:var(--gr);line-height:1.4;margin-bottom:8px;}
+.ff-item-price{font-family:'Josefin Sans',sans-serif;font-weight:800;font-size:16px;color:var(--g);}
 </style>
 </head>
 <body>
@@ -1987,7 +2057,7 @@ footer{background:var(--br);padding:52px 40px 28px;}
       <div style="margin-bottom:24px;">
         <span style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px 18px;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:13px;display:inline-block;margin:5px;">📞 0792405060</span>
         <span style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px 18px;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:13px;display:inline-block;margin:5px;">📍 Serem, Vihiga County</span>
-        <span style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px 18px;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:13px;display:inline-block;margin:5px;">✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="69010c050506291a060206011c1b1c470a0647020c">[email&#160;protected]</a></span>
+        <span style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px 18px;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:13px;display:inline-block;margin:5px;">✉️ sokohuru254@gmail.com</span>
         <span style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px 18px;color:#fff;font-family:'Josefin Sans',sans-serif;font-size:13px;display:inline-block;margin:5px;">🕐 Mon–Sun, 7am–8pm</span>
       </div>
       <button class="btn bta" onclick="go('shop')">Shop the Marketplace</button>
@@ -2015,6 +2085,8 @@ footer{background:var(--br);padding:52px 40px 28px;}
       <span class="fcl" onclick="filterShop('Bakery')">Bakery</span>
       <span class="fcl" onclick="filterShop('Grains')">Grains &amp; Flour</span>
       <span class="fcl" onclick="filterShop('General Shop Supplies')">General Shop</span>
+      <span class="fcl" onclick="filterShop('Fast Food')">🍔 Camp Dave Cafe</span>
+      <span class="fcl" onclick="filterShop('Local Kitchen')">🍽️ Tina's Kitchen</span>
     </div>
     <div>
       <div class="fct">Mtumba &amp; Mali Mali</div>
@@ -2030,7 +2102,7 @@ footer{background:var(--br);padding:52px 40px 28px;}
       <div class="fct">Contact</div>
       <span class="fcl">📍 Serem, Vihiga County</span>
       <span class="fcl">📞 0792405060</span>
-      <span class="fcl">✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="721a171e1e1d32011d191d1a0700075c111d5c1917">[email&#160;protected]</a></span>
+      <span class="fcl">✉️ sokohuru254@gmail.com</span>
       <span class="fcl">🕐 Mon–Sun, 7am–8pm</span>
     </div>
   </div>
@@ -2255,7 +2327,7 @@ const I = {
 };
 
 // ========== DEFINE CATEGORIES AND LOCAL NAMES ==========
-const foodCategories = ['Vegetables','Fruits','Dairy & Eggs','Egg Depot','Fresh Fish','Butchery','Butchery Meat','Butchery Chicken','Grains','Pantry','Bakery','Beverages','Snacks','Spices','Herbs','Tubers','Legumes','Condiments','General Shop Supplies'];
+const foodCategories = ['Vegetables','Fruits','Dairy & Eggs','Egg Depot','Fresh Fish','Butchery','Butchery Meat','Butchery Chicken','Grains','Pantry','Bakery','Beverages','Snacks','Spices','Herbs','Tubers','Legumes','Condiments','General Shop Supplies','Fast Food','Local Kitchen'];
 const generalCats = ['General Shop Supplies'];
 const newCats = ['Beauty & Skincare','Hair Products','Solar & Energy','Agricultural Inputs','Baby Products','Health & Pharmacy','Automotive'];
 const nonFoodCategories = ["Mtumba Men's","Mtumba Women's","Mtumba Kids","Mtumba Shoes","Mtumba Bags","Mtumba Electronics","Mali Mali","Beauty & Skincare","Hair Products","Solar & Energy","Agricultural Inputs","Baby Products","Health & Pharmacy","Automotive","Boutique Clothes","Football Jerseys & 3D Tees","Gas Supply & LPG"];
@@ -2315,7 +2387,36 @@ const productNames = {
     "Kettle for Gas Burner","Gas Lantern Camping","Gas Torch Lighter"
   ],
   "Football Jerseys & 3D Tees": ["Man Utd Jersey 2024/25","Arsenal Jersey 2024/25","Chelsea Jersey 2024/25","Real Madrid Jersey 2024/25","Barcelona Jersey 2024/25","Liverpool Jersey 2024/25","PSG Jersey 2024/25","Harambee Stars Jersey","Manchester City Jersey 2024/25","Bayern Munich Jersey 2024/25","Juventus Jersey 2024/25","Inter Milan Jersey 2024/25","Gor Mahia Jersey","AFC Leopards Jersey","Tottenham Jersey 2024/25","AC Milan Jersey 2024/25","Borussia Dortmund Jersey 2024/25","Chelsea Away Jersey 2024/25","Liverpool Away Jersey 2024/25","Arsenal Away Jersey 2024/25","Napoli Jersey 2024/25","Atletico Madrid Jersey 2024/25","3D Lion Print T-Shirt","3D Eagle Print T-Shirt","3D Galaxy Print T-Shirt","3D Skull Print T-Shirt","3D Tiger Print T-Shirt","3D African Map T-Shirt","3D Camo Military T-Shirt","3D Money Print T-Shirt","3D Flame Print T-Shirt","3D Nature Forest T-Shirt","3D Dragon Print T-Shirt","3D Leopard Print T-Shirt"],
-  "Boutique Clothes": ["Ankara Maxi Dress","Kitenge Wrap Dress","Lace Bodycon Dress","Office Blazer Set","Two-Piece Ankara Set","Evening Gown","Bridal Shower Dress","Jumpsuit (Ladies)","Men's Ankara Shirt","Men's Linen Suit","Men's Chino Set","Men's Dashiki","Couple Matching Outfit","Graduation Dress","Church Dress (Mama)","Kitenge Skirt Suit","Kaftan Dress","Chiffon Flare Dress","Silk Print Blouse","Floral Sundress","Halter Neck Top","Crop Top Set","Wide-Leg Trousers"]
+  "Boutique Clothes": ["Ankara Maxi Dress","Kitenge Wrap Dress","Lace Bodycon Dress","Office Blazer Set","Two-Piece Ankara Set","Evening Gown","Bridal Shower Dress","Jumpsuit (Ladies)","Men's Ankara Shirt","Men's Linen Suit","Men's Chino Set","Men's Dashiki","Couple Matching Outfit","Graduation Dress","Church Dress (Mama)","Kitenge Skirt Suit","Kaftan Dress","Chiffon Flare Dress","Silk Print Blouse","Floral Sundress","Halter Neck Top","Crop Top Set","Wide-Leg Trousers"],
+
+  // ── FAST FOOD (Camp Dave Cafe Serem) ─────────────────────────────────────
+  'Fast Food': [
+    'Beef Burger','Chicken Burger','Double Beef Burger','Veggie Burger',
+    'Chips (Plain)','Chips Masala','Chips Chicken','Chips Egg',
+    'Grilled Chicken (Quarter)','Grilled Chicken (Half)','Grilled Chicken (Whole)',
+    'Chicken Strips','Chicken Nuggets (6 pcs)','Chicken Wings (6 pcs)',
+    'Beef Sausage & Chips','Grilled Sausage (2 pcs)',
+    'Fresh Mango Juice','Fresh Passion Juice','Fresh Watermelon Juice','Fresh Orange Juice',
+    'Soda (330ml)','Mineral Water (500ml)','Milkshake (Strawberry)','Milkshake (Vanilla)',
+    'Chapati & Beans','Fried Egg & Bread','Smoky BBQ Ribs',
+    'Hot Dog','Meat Samosa (2 pcs)','Veg Samosa (2 pcs)',
+    'Toasted Sandwich (Beef)','Toasted Sandwich (Chicken)','Club Sandwich',
+    'Cheese Burger','Spicy Chicken Wrap'
+  ],
+
+  // ── LOCAL KITCHEN (Tina's Kitchen) ────────────────────────────────────────
+  'Local Kitchen': [
+    'Nyama Choma (Goat)','Nyama Choma (Beef)','Nyama Choma (Chicken)',
+    'Pilau (Beef)','Pilau (Chicken)','Biryani (Chicken)','Biryani (Beef)',
+    'Githeri Special','Ugali & Sukuma Wiki','Ugali & Fish','Ugali & Nyama',
+    'Chapati & Beans','Chapati & Beef Stew','Chapati & Chicken Stew',
+    'Rice & Beans','Rice & Chicken Stew','Rice & Fish',
+    'Mukimo','Matumbo (Tripe) Stew','Maini (Liver) Fry',
+    'Boiled Eggs (2 pcs)','Mandazi (2 pcs)','Chai (Tea)','Black Tea',
+    'Porridge (Uji)','Soda (330ml)','Fresh Juice (Passion)','Fresh Juice (Mango)',
+    'Smokies & Bread','Mtura (Kenyan Sausage)','Roasted Maize',
+    'Mixed Plate (Ugali+Sukuma+Nyama)','Kids Meal (Rice+Stew)','Family Platter (4 pcs Chicken+Chips)'
+  ]
 };
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -3146,6 +3247,74 @@ const PRICE_MAP = {
   "Sewing Kit":          200,
   "Mosquito Net":        500,
   "Sufuria":             700,
+
+  // ── FAST FOOD — Camp Dave Cafe Serem ────────────────────────────────────
+  'Beef Burger':              250,
+  'Chicken Burger':           230,
+  'Double Beef Burger':       380,
+  'Veggie Burger':            180,
+  'Cheese Burger':            280,
+  'Chips (Plain)':            100,
+  'Chips Masala':             120,
+  'Chips Chicken':            250,
+  'Chips Egg':                150,
+  'Grilled Chicken (Quarter)':250,
+  'Grilled Chicken (Half)':   420,
+  'Grilled Chicken (Whole)':  750,
+  'Chicken Strips':           220,
+  'Chicken Nuggets (6 pcs)':  200,
+  'Chicken Wings (6 pcs)':    280,
+  'Beef Sausage & Chips':     220,
+  'Grilled Sausage (2 pcs)':  150,
+  'Fresh Mango Juice':        100,
+  'Fresh Passion Juice':      100,
+  'Fresh Watermelon Juice':   100,
+  'Fresh Orange Juice':       120,
+  'Milkshake (Strawberry)':   180,
+  'Milkshake (Vanilla)':      180,
+  'Hot Dog':                  150,
+  'Meat Samosa (2 pcs)':      120,
+  'Veg Samosa (2 pcs)':       100,
+  'Toasted Sandwich (Beef)':  200,
+  'Toasted Sandwich (Chicken)':180,
+  'Club Sandwich':            280,
+  'Spicy Chicken Wrap':       250,
+  'Smoky BBQ Ribs':           550,
+  'Fried Egg & Bread':        100,
+
+  // ── LOCAL KITCHEN — Tina's Kitchen ──────────────────────────────────────
+  'Nyama Choma (Goat)':       550,
+  'Nyama Choma (Beef)':       500,
+  'Nyama Choma (Chicken)':    450,
+  'Pilau (Beef)':             180,
+  'Pilau (Chicken)':          160,
+  'Biryani (Chicken)':        220,
+  'Biryani (Beef)':           240,
+  'Githeri Special':           80,
+  'Ugali & Sukuma Wiki':       80,
+  'Ugali & Fish':             150,
+  'Ugali & Nyama':            200,
+  'Chapati & Beans':           80,
+  'Chapati & Beef Stew':      150,
+  'Chapati & Chicken Stew':   140,
+  'Rice & Beans':              90,
+  'Rice & Chicken Stew':      160,
+  'Rice & Fish':              150,
+  'Mukimo':                   100,
+  'Matumbo (Tripe) Stew':     150,
+  'Maini (Liver) Fry':        160,
+  'Boiled Eggs (2 pcs)':       60,
+  'Mandazi (2 pcs)':           40,
+  'Chai (Tea)':                30,
+  'Black Tea':                 25,
+  'Porridge (Uji)':            50,
+  'Fresh Juice (Passion)':    100,
+  'Fresh Juice (Mango)':      100,
+  'Smokies & Bread':           80,
+  'Mtura (Kenyan Sausage)':   120,
+  'Mixed Plate (Ugali+Sukuma+Nyama)': 250,
+  'Kids Meal (Rice+Stew)':    120,
+  'Family Platter (4 pcs Chicken+Chips)': 700,
 };
 
 // Category-level fallback price ranges when product not in map [min, max]
@@ -3186,6 +3355,8 @@ const CAT_PRICE_RANGE = {
   'Football Jerseys & 3D Tees': [700, 1600],
   'Gas Supply & LPG':          [180, 28000],
   'General Shop Supplies':      [30, 1500],
+  'Fast Food':                  [50,  850],
+  'Local Kitchen':              [50,  700],
 };
 
 // ========== SELLERS ==========
@@ -3250,6 +3421,14 @@ const SELLERS = [
     tagline:"Authorised ICON LPG dealer — all major brands, refilling, cylinders, burners & grills in Serem",
     cats:['Gas Supply & LPG'],
     location:'Serem Town, near Stage', rating:4.8, sales:112, reviews:39, since:'Dec 2023' },
+  { id:16, name:'Camp Dave Cafe Serem', short:'Camp Dave Cafe', wa:'254792405060', emoji:'🍔',
+    tagline:'Best fast food in Serem — burgers, chips, grilled chicken, fresh juices & much more!',
+    cats:['Fast Food'],
+    location:'Serem Town Centre, near Stage', rating:4.8, sales:276, reviews:82, since:'Jun 2022' },
+  { id:17, name:"Tina's Kitchen", short:"Tina's Kitchen", wa:'254792405060', emoji:'🍽️',
+    tagline:'Home-style fast food & local delicacies — nyama choma, pilau, githeri, chapati & drinks',
+    cats:['Local Kitchen'],
+    location:'Serem Market Road', rating:4.9, sales:341, reviews:95, since:'Jan 2022' },
 ];
 const CAT_SELLER = {};
 SELLERS.forEach(s => s.cats.forEach(c => { CAT_SELLER[c] = s.id; }));
@@ -3443,6 +3622,27 @@ for (let cat in productNames) {
       variants.push({ label: '250 g', price: basePrice });
       variants.push({ label: '500 g', price: Math.round(basePrice * 1.7) });
       variants.push({ label: '1 kg', price: Math.round(basePrice * 2.8) });
+    } else if (cat === 'Fast Food') {
+      variants.push({ label: 'Regular', price: basePrice });
+      if (name.includes('Burger') || name.includes('Sandwich') || name.includes('Wrap') || name.includes('Hot Dog')) {
+        variants.push({ label: 'Meal (+ Chips & Drink)', price: Math.round(basePrice * 1.8) });
+      } else if (name.includes('Chicken') || name.includes('Ribs')) {
+        variants.push({ label: 'Large Portion', price: Math.round(basePrice * 1.5) });
+      } else if (name.includes('Juice') || name.includes('Milkshake')) {
+        variants.push({ label: 'Large (500 ml)', price: Math.round(basePrice * 1.6) });
+      } else if (name.includes('Chips')) {
+        variants.push({ label: 'Large', price: Math.round(basePrice * 1.5) });
+      }
+    } else if (cat === 'Local Kitchen') {
+      variants.push({ label: 'Single Plate', price: basePrice });
+      if (name.includes('Nyama Choma') || name.includes('Pilau') || name.includes('Biryani') || name.includes('Platter')) {
+        variants.push({ label: 'Half Kg', price: Math.round(basePrice * 1.5) });
+        variants.push({ label: '1 Kg', price: Math.round(basePrice * 2.8) });
+      } else if (name.includes('Chapati') || name.includes('Ugali') || name.includes('Rice')) {
+        variants.push({ label: 'Double Portion', price: Math.round(basePrice * 1.8) });
+      } else if (name.includes('Chai') || name.includes('Tea') || name.includes('Juice') || name.includes('Porridge')) {
+        variants.push({ label: 'Large Cup', price: Math.round(basePrice * 1.5) });
+      }
     } else if (nonFoodCategories.includes(cat)) {
       if (cat.includes('Shoes')) {
         variants.push({ label: 'Size 37', price: basePrice });
@@ -4345,7 +4545,7 @@ function sendOrderEmails(o) {
     delivery_fee: 'Ksh 50',
     total:      'Ksh ' + o.total.toLocaleString(),
     date:       o.dateStr + ' at ' + o.timeStr,
-    to_email:   'fhussein354@gmail.com',
+    to_email:   'sokohuru254@gmail.com',
     reply_to:   o.em || o.p + '@smsless.com',
   };
   // Email to store owner
@@ -5788,6 +5988,137 @@ window.filterSellerCat = filterSellerCat;
   </div>
 </div>
 
+<!-- ══════ PWA INSTALL BANNER ══════ -->
+<div id="pwa-banner" role="dialog" aria-label="Install Soko Huru app">
+  <div class="pwa-icon">🛒</div>
+  <div class="pwa-text">
+    <div class="pwa-title">Install SOKO HURU</div>
+    <div class="pwa-sub">Shop offline, get faster load times & easy access from your home screen.</div>
+    <div class="pwa-chips">
+      <span class="pwa-chip">📵 Works Offline</span>
+      <span class="pwa-chip">⚡ Faster</span>
+      <span class="pwa-chip">📲 No App Store</span>
+    </div>
+  </div>
+  <div class="pwa-actions">
+    <button class="pwa-install-btn" id="pwa-install-btn">Install</button>
+    <button class="pwa-dismiss-btn" id="pwa-dismiss-btn">Not now</button>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════════
+//  PWA — Manifest injection, Service Worker, Install Banner
+// ══════════════════════════════════════════════════════════════════
+(function(){
+  // 1. Inject Web App Manifest dynamically
+  const manifest = {
+    name: 'SOKO HURU — Serem Market',
+    short_name: 'Soko Huru',
+    description: 'Your trusted online marketplace for fresh produce, Mtumba, fast food & everyday essentials in Vihiga County.',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#fdf8f0',
+    theme_color: '#1a6b3c',
+    orientation: 'portrait-primary',
+    icons: [
+      { src:'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=192&h=192&fit=crop&q=80', sizes:'192x192', type:'image/jpeg', purpose:'any maskable' },
+      { src:'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=512&h=512&fit=crop&q=80', sizes:'512x512', type:'image/jpeg', purpose:'any maskable' }
+    ],
+    categories: ['shopping', 'food', 'lifestyle'],
+    shortcuts: [
+      { name:'Shop Now', short_name:'Shop', description:'Browse all products', url:'/shop', icons:[{src:'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=96&h=96&fit=crop',sizes:'96x96'}] },
+      { name:'Fast Food', short_name:'Food', description:'Order food online', url:'/food', icons:[{src:'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=96&h=96&fit=crop',sizes:'96x96'}] }
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const el = document.getElementById('pwa-manifest');
+  if(el) el.href = url;
+
+  // 2. Register Service Worker for offline caching
+  if('serviceWorker' in navigator){
+    const swCode = `
+const CACHE='soko-huru-v1';
+const ASSETS=['/'];
+self.addEventListener('install',e=>{
+  e.waitUntil(
+    caches.open(CACHE).then(c=>c.addAll(ASSETS)).catch(()=>{})
+  );
+  self.skipWaiting();
+});
+self.addEventListener('activate',e=>{
+  e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));
+  self.clients.claim();
+});
+self.addEventListener('fetch',e=>{
+  if(e.request.method!=='GET') return;
+  e.respondWith(
+    fetch(e.request).then(res=>{
+      if(res&&res.status===200){
+        const clone=res.clone();
+        caches.open(CACHE).then(c=>c.put(e.request,clone));
+      }
+      return res;
+    }).catch(()=>caches.match(e.request).then(r=>r||new Response('<h1 style="font-family:sans-serif;padding:40px;text-align:center">📶 You are offline.<br><small>SOKO HURU is loading from cache…</small></h1>',{headers:{'Content-Type':'text/html'}})))
+  );
+});`;
+    const swBlob = new Blob([swCode],{type:'application/javascript'});
+    const swUrl = URL.createObjectURL(swBlob);
+    navigator.serviceWorker.register(swUrl,{scope:'/'}).catch(()=>{});
+  }
+
+  // 3. PWA Install prompt — show after 10 seconds
+  let deferredPrompt = null;
+  const banner = document.getElementById('pwa-banner');
+  const installBtn = document.getElementById('pwa-install-btn');
+  const dismissBtn = document.getElementById('pwa-dismiss-btn');
+
+  window.addEventListener('beforeinstallprompt', e=>{
+    e.preventDefault();
+    deferredPrompt = e;
+  });
+
+  function showBanner(){
+    // Don't show if already installed or dismissed in this session
+    if(sessionStorage.getItem('pwa-dismissed')) return;
+    if(window.matchMedia('(display-mode: standalone)').matches) return;
+    banner.classList.add('visible');
+  }
+
+  // Show after 10 seconds
+  setTimeout(showBanner, 10000);
+
+  installBtn.addEventListener('click', async ()=>{
+    banner.classList.remove('visible');
+    if(deferredPrompt){
+      deferredPrompt.prompt();
+      const {outcome} = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      if(outcome==='accepted'){
+        console.log('Soko Huru PWA installed');
+      }
+    } else {
+      // Fallback: show manual install instructions
+      const ua = navigator.userAgent;
+      let msg = '📲 To install:\n';
+      if(/iphone|ipad|ipod/i.test(ua)){
+        msg += 'Tap the Share button (□↑) at the bottom of Safari, then tap "Add to Home Screen".';
+      } else if(/android/i.test(ua)){
+        msg += 'Tap the ⋮ menu in Chrome, then tap "Add to Home screen".';
+      } else {
+        msg += 'In your browser menu, look for "Install App" or "Add to Home Screen".';
+      }
+      alert(msg);
+    }
+  });
+
+  dismissBtn.addEventListener('click', ()=>{
+    banner.classList.remove('visible');
+    sessionStorage.setItem('pwa-dismissed','1');
+  });
+})();
+</script>
 
 </body>
 </html>
