@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /SOKO_HURU_v4-2.html
-
-Sitemap: https://sokohuru.co.ke/sitemap.xml
